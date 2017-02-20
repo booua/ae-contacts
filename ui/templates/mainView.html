@@ -1,0 +1,18 @@
+<include href="{{ @templates . 'header.html' }}" />
+<div class="categories_grid">
+    <div class="row">
+      <a href="./category/new_category">
+        <div class="tile col-md-3 create_new">
+          <h3>create New</h3>
+        </div>
+      </a>
+        <repeat group="{{ @all_categories }}" value="@category">
+          <a href="./category/{{@category.id}}">
+            <div class="tile {{@category.name}}_tile col-md-3">
+                <h3>{{@category.name}}</h3>
+            </div>
+          </a>
+        </repeat>
+    </div>
+</div>
+<include href="{{ @templates . 'footer.html' }}" />

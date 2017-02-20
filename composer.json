@@ -1,0 +1,9 @@
+{
+	"name": "ae/adsApi",
+	"require": {
+		"php": ">=5.3.6"
+	},
+	"autoload": {
+		"files": ["lib/base.php"]
+	}
+}
