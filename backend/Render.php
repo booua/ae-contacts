@@ -31,7 +31,9 @@ class Render{
   }
 
   function renderAllContactsView($f3){
-
+    $f3->set('all_contacts',$f3->get('DB')->exec("SELECT * FROM contacts"));
+    $template=new Template;
+    echo $template->render($f3->get('templates') . 'AllContactsView.html');
   }
 
   function renderNewContactView($f3){

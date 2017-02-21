@@ -1,3 +1,8 @@
 <include href="{{ @templates . 'header.html' }}" />
+<check if="{{ @GET.success==1 }}">
+<p>
+  SUCCESS
+</p>
+</check>
 <include href="{{ @templates . 'dataForm.html' }}" />
 <include href="{{ @templates . 'footer.html' }}" />
