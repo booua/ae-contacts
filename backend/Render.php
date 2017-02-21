@@ -5,15 +5,19 @@ class Render{
 
 
     $f3->set('all_categories',$f3->get('DB')->exec("SELECT * FROM category"));
+    $f3->set('page_title','All categories');
     $template=new Template;
     echo $template->render($f3->get('templates') . 'mainView.html');
   }
 
   function renderSingleCategoryView($f3){
+
+
       $category_id = $f3->get("PARAMS.category_id");
-      $f3->set('all_contacts',$f3->get('DB')->exec("SELECT category.*, contacts.* FROM category
+      $f3->set('all_contacts',$f3->get('DB')->exec("SELECT category.name, contacts.* FROM category
                                                     JOIN contacts ON contacts.category_id = category.id
                                                     WHERE category.id = ?",array(1=>$category_id)));
+      $f3->set('page_title','Companies');
       $template=new Template;
       echo $template->render($f3->get('templates') . 'singleCategoryView.html');
   }
@@ -31,18 +35,21 @@ class Render{
   }
 
   function renderAllContactsView($f3){
+    $f3->set('page_title','All companies');
     $f3->set('all_contacts',$f3->get('DB')->exec("SELECT * FROM contacts"));
     $template=new Template;
     echo $template->render($f3->get('templates') . 'AllContactsView.html');
   }
 
   function renderNewContactView($f3){
+    $f3->set('page_title','New contact');
     $f3->set('form_type', 'contact');
     $template=new Template;
     echo $template->render($f3->get('templates') . 'CreateNew.html');
   }
 
   function renderNewCategoryView($f3){
+    $f3->set('page_title','New category');
     $f3->set('form_type', 'category');
     $template=new Template;
     echo $template->render($f3->get('templates') . 'CreateNew.html');

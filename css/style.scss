@@ -11,9 +11,24 @@ body{
   height: 100%;
   box-sizing: border-box;
 }
+form{
+  margin-top: 10vh !important;
+  margin-left: 100px;
+}
+.container-fluid{
+  padding-left: 0;
+}
 a{
   text-decoration: none;
   color: white;
+}
+.menu{
+  position: fixed;
+  z-index: 999;
+  height: 8vh;
+  width: 100vw;
+  box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.35);
+  background-color: $tileColor;
 }
 
 .tile{
