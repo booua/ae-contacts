@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Contacts</title>
 	<link href="{{@app_root}}css/style.min.css" rel="stylesheet">
+  <link href="{{@app_root}}css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container-fluid">
     <div class="menu">
-      <h2 style='color:white; padding-left:50px;'>{{ @page_title }}</h2>
+      <h2 style='color:#000; padding-left:50px;'>{{ @page_title }}</h2>
+      <i id="search_icon"class="fa fa-search" aria-hidden="true"></i>
+      <input type="text" class="rounded" name="search" id="search">
+    </div>
+    <div class="logo"></div>
+    <div class="side_menu">
+      <div class="sidebar-menu">
+        <span>menu 1</span>
+        <span>menu 2</span>
+        <span>menu 3</span>
+        <span>menu 4</span>
+      </div>
     </div>
