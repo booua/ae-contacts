@@ -18,6 +18,8 @@ $f3->route('GET /category/new_category','Render->renderNewCategoryView');
 $f3->route('GET|POST /category/new_category/create','DataHandler->createNewCategory');
 $f3->route('GET /category/@category_id/new_contact','Render->renderNewContactView');
 $f3->route('GET|POST /category/@category_id/new_contact/create','DataHandler->createNewContact');
+$f3->route('POST /search','DataHandler->searchForCategory');
+$f3->route('POST /category/@category_id/search','DataHandler->searchForContact');
 
 
 $f3->run();

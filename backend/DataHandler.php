@@ -33,7 +33,8 @@ class DataHandler{
   }
 
   function searchForContact($f3){
-
+      echo('asdsa');
+      var_dump($f3->get("POST.company_name"));
   }
 
   function searchForCategory($f3){

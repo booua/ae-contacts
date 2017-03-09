@@ -1,4 +1,4 @@
-$tileColor : #8AA29E;
+$tileColor : #B7B5E4;
 $menuColor : #ffffff;
 $sideColor : #686963;
 $bgColor   : #FAFAFA;
@@ -11,14 +11,15 @@ body{
   position: relative;
   background-color: $bgColor;
   width: 90vw;
+  margin-top: 10vh;
   margin-left: 10vw;
   padding: 3%;
   height: 100%;
   box-sizing: border-box;
 }
 form{
-  margin-top: 10vh !important;
-  margin-left: 100px;
+  margin-top: 20vh !important;
+  margin-left: 20vw;
 }
 .container-fluid{
   padding-left: 0;
@@ -52,7 +53,7 @@ h2{
 }
 .tile{
   background-color: $tileColor;
-  margin-top: 50px;
+  margin-top: 1%;
   box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.35);
   height: 25vh;
   width: 24% !important;
@@ -113,7 +114,7 @@ h2{
 }
 i{
   position: fixed;
-  right:13vw;
+  right:15vw;
   top:4vh;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(.25,.8,.25,1);
@@ -121,7 +122,7 @@ i{
 
 input.rounded {
   position: fixed;
-  right:0;
+  right:2vw;
   top:2.5vh;
   width: 15vw;
 	border: 1px solid #adadad;
