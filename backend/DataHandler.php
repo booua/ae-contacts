@@ -33,13 +33,18 @@ class DataHandler{
   }
 
   function searchForContact($f3){
-      echo('asdsa');
-      var_dump($f3->get("POST.company_name"));
-  }
+    $category_name = $f3->get("POST.category_name");
+    $company_name = $f3->get("POST.company_name");
+    echo(json_encode($f3->get('DB')->exec("SELECT * FROM companies WHERE name LIKE ?",array(1=>$company_name))));
+}
 
   function searchForCategory($f3){
+    $category_name = $f3->get("POST.category_name");
+    $company_name = $f3->get("POST.company_name");
+    echo(json_encode($f3->get('DB')->exec("SELECT * FROM category WHERE name LIKE ?",array(1=>$category_name))));
 
+
+    }
   }
-}
 
 ?>
