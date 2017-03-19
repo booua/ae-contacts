@@ -33,17 +33,17 @@ class DataHandler{
   }
 
   function searchForContact($f3){
-    $category_name = $f3->get("POST.category_name");
-    $company_name = $f3->get("POST.company_name");
-    echo(json_encode($f3->get('DB')->exec("SELECT * FROM companies WHERE name LIKE ?",array(1=>$company_name))));
+
+
 }
 
-  function searchForCategory($f3){
-    $category_name = $f3->get("POST.category_name");
-    $company_name = $f3->get("POST.company_name");
-    echo(json_encode($f3->get('DB')->exec("SELECT * FROM category WHERE name LIKE ?",array(1=>$category_name))));
-
-
+  function searchEntry($f3){
+    $search_query = $f3->get("POST.search_query");
+      if($f3->get("PARAMS.category_id")){
+          echo(json_encode($f3->get('DB')->exec("SELECT * FROM contacts WHERE name LIKE ?",array(1=>$search_query))));
+      }else{
+          echo(json_encode($f3->get('DB')->exec("SELECT * FROM category WHERE name LIKE ?",array(1=>$search_query))));
+      }
     }
   }
 

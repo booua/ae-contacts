@@ -1,16 +1,18 @@
 <include href="{{ @templates . 'header.html' }}" />
 <div class="categories_grid">
-  <a href="./{{@PARAMS.category_id}}/new_contact">
-  <div class="new_contact col-md-3 tile">
-    <h3>New contact</h3>
-  </div>
-</a>
-<repeat group="{{ @all_contacts }}" value="@contact">
-  <a href="./{{@contact.category_id}}/contact/{{@contact.id}}">
-    <div class="tile {{@contact.name}}_tile col-md-3">
-        <h3>{{@contact.name}}</h3>
+    <div id="main_row" class="row">
+        <a href="./{{@PARAMS.category_id}}/new_contact">
+            <div class="new_contact col-md-3 tile">
+                <h3>New contact</h3>
+            </div>
+        </a>
+        <repeat group="{{ @all_contacts }}" value="@contact">
+            <a href="./{{@contact.category_id}}/contact/{{@contact.id}}">
+                <div class="tile {{@contact.name}}_tile col-md-3">
+                    <h3>{{@contact.name}}</h3>
+                </div>
+            </a>
+        </repeat>
     </div>
-  </a>
-</repeat>
 </div>
 <include href="{{ @templates . 'footer.html' }}" />
