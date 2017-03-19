@@ -1,9 +1,22 @@
 <?php
   class Helpers{
 
-    function checkForDuplicateEntry($f3){
-      $result = $f3->get('DB')->exec("SELECT name FROM contacts");
-      
+    function checkForDuplicateEntry($f3, $contactEntry, $searchType){
+      switch ($searchType) {
+        case $f3->get('SEARCH_CONTACT'):
+          $result = $f3->get('DB')->exec("SELECT name FROM contacts");
+          break;
+
+        case $f3->get('SEARCH_CATEGORY'):
+          $result = $f3->get('DB')->exec("SELECT name FROM category");
+          break;
+      }
+
+      $nameArray = array();
+      foreach ($result as $key => $value) {
+        array_push($nameArray, $value['name']);
+      }
+        return (in_array($contactEntry,$nameArray));
     }
 
     function exportDatabaseToCSV($f3){

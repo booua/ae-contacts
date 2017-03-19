@@ -1,3 +1,11 @@
+<check if="{{ @GET.duplicate==1 }}">
+DUPLICATE
+</check>
+
+<check if="{{ @GET.success==1 }}">
+SUCCESS
+</check>
+
 <check if="{{ @form_type=='contact' }}">
     <true>
       <form class="company_data_form" action="new_contact/create" method="post">
