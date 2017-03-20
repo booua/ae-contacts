@@ -29,7 +29,7 @@ class Render{
                                                     WHERE contacts.category_id = ?
                                                     AND contacts.id = ?",array(
                                                       1=>$category_id,
-                                                      2=>$contact_id)));
+                                                      2=>$contact_id))[0]);
     $template=new Template;
     echo $template->render($f3->get('templates') . 'singleContactView.html');
   }

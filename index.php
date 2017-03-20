@@ -14,6 +14,8 @@ $f3->route('GET /','Render->renderAllCategoriesView');
 $f3->route('GET /all_contacts','Render->renderAllContactsView');
 $f3->route('GET /category/@category_id','Render->renderSingleCategoryView');
 $f3->route('GET /category/@category_id/contact/@contact_id','Render->renderSingleContactView');
+$f3->route('GET /category/@category_id/contact/@contact_id/delete','DataHandler->deleteContact');
+$f3->route('GET|POST /category/@category_id/contact/@contact_id/update','DataHandler->updateContact');
 $f3->route('GET /category/new_category','Render->renderNewCategoryView');
 $f3->route('GET|POST /category/new_category/create','DataHandler->createNewCategory');
 $f3->route('GET /category/@category_id/new_contact','Render->renderNewContactView');
