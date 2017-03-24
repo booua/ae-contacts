@@ -27,6 +27,15 @@ function postAjax(url, data, success) {
     xhr.send(params);
     return xhr;
 }
+if(document.getElementById('delete_button')!=null){
+  document.getElementById('delete_button').onclick = function(){
+    if(confirm('Are you sure?')){
+      return true;
+    }else{
+      return false;
+    }
+  }
+}
 
 document.getElementById("search").addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -44,7 +53,6 @@ document.getElementById("search").addEventListener("keyup", function(event) {
             for (var i = 0; i < jsonData.length; i++) {
                 console.log(jsonData[i]);
                 document.getElementById("main_row").innerHTML += '<a href="./category/' + parseInt(jsonData[i].id) + '"><div class="tile col-md-3"><h3>' + jsonData[i].name + '</h3></div></a>'
-
             }
         });
     }

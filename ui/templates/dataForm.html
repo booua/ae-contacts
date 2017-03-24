@@ -1,11 +1,6 @@
-<check if="{{ @GET.duplicate==1 }}">
-DUPLICATE
+<check if="{{ @GET.message_type==duplicate }}">
+    <include href="{{ @templates . 'ModalAlert.html' }}" />
 </check>
-
-<check if="{{ @GET.success==1 }}">
-SUCCESS
-</check>
-
 <check if="{{ @form_type=='contact' }}">
     <true>
       <form class="company_data_form" action="new_contact/create" method="post">
@@ -49,15 +44,9 @@ SUCCESS
           <label for="category_name">Category name</label>
           <input type="text" name="company_name" value="">
         </div>
-
         <div class="row">
           <label for="company_icon">Category icon</label>
           <input type="text" name="company_icon" value="" placeholder="e.g: fa-camera">
-          <!-- <select class="company_icon" name="company_icon">
-            <option value="1">test-icon</option>
-            <option value="2">test-icon2</option>
-            <option value="3">test-icon3</option>
-          </select> -->
         </div>
         <div class="row">
           <button type="submit" class='btn btn-success' name="button">Submit</button>

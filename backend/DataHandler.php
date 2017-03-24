@@ -15,9 +15,9 @@ class DataHandler{
           $company->phone=$f3->get("POST.company_phone");
           $company->additional=$f3->get("POST.company_additional");
           $company->save();
-          $f3->reroute('../?success=1');
+          $f3->reroute('../?message_type=created');
         }else{
-          $f3->reroute('./?duplicate=1');
+          $f3->reroute('./?message_type=duplicate');
         }
     }
 
@@ -25,7 +25,7 @@ class DataHandler{
           $contact=new DB\SQL\Mapper($f3->get('DB'),'contacts');
           $contact->load(array('id=?',$f3->get("PARAMS.contact_id")));
           $contact->erase();
-          $f3->reroute('../../?deleted=1');
+          $f3->reroute('../../?message_type=deleted');
   }
 
   function updateContact($f3){
@@ -40,7 +40,7 @@ class DataHandler{
         'phone'=>$f3->get("POST.company_phone"),
         'add'=>$f3->get("POST.company_additional"),
         'id'=>$f3->get("PARAMS.contact_id")));
-        $f3->reroute('./?updated=1');
+        $f3->reroute('./?message_type=updated');
   }
 
   function createNewCategory($f3){
@@ -51,9 +51,9 @@ class DataHandler{
       $category->name=$f3->get("POST.company_name");
       $category->icon=$f3->get("POST.company_icon");
       $category->save();
-      $f3->reroute('../?success=1');
+      $f3->reroute('../?message_type=created');
     }else{
-      $f3->reroute('./?duplicate=1');
+      $f3->reroute('./?message_type=duplicate');
     }
 
   }

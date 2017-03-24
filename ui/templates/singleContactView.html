@@ -1,4 +1,9 @@
 <include href="{{ @templates . 'header.html' }}" />
+
+<check if="{{ @GET.message_type==updated }}">
+    <include href="{{ @templates . 'ModalAlert.html' }}" />
+</check>
+
 <form class="company_data_form" action="{{@PARAMS.contact_id}}/update" method="post">
   <div class="row">
     <label for="company_name">Company name</label>
@@ -31,7 +36,7 @@
   </div>
   <div class="row">
     <button type="submit" class='btn btn-success' name="button">UPDATE CONTACT</button>
-    <a href="{{@PARAMS.contact_id}}/delete" class='btn btn-danger' name="button">DELETE CONTACT</a>
+    <a href="{{@PARAMS.contact_id}}/delete" class='btn btn-danger' id="delete_button" name="button">DELETE CONTACT</a>
   </div>
 </form>
 <include href="{{ @templates . 'footer.html' }}" />

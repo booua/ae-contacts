@@ -1,4 +1,9 @@
 <include href="{{ @templates . 'header.html' }}" />
+
+<check if="{{ @GET }}">
+    <include href="{{ @templates . 'ModalAlert.html' }}" />
+</check>
+
 <div class="categories_grid">
     <div id="main_row" class="row">
         <a href="./category/new_category">

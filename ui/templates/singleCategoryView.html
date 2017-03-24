@@ -1,4 +1,8 @@
 <include href="{{ @templates . 'header.html' }}" />
+<check if="{{ @GET.message_type==deleted }}">
+    <include href="{{ @templates . 'ModalAlert.html' }}" />
+</check>
+
 <div class="categories_grid">
     <div id="main_row" class="row">
         <a href="./{{@PARAMS.category_id}}/new_contact">

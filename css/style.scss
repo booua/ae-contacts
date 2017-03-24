@@ -164,6 +164,24 @@ h2 {
     background-color: $accentColor;
 }
 
+.top-alert{
+  position: fixed;
+  width: 90vw;
+  margin-left: 10vw;
+  margin-top: 10vh;
+  height: 10vh;
+  z-index: 9999;
+}
+.created, .updated{
+  background-color: green;
+}
+.duplicate{
+  background-color: red;
+}
+.deleted{
+  background-color:yellow
+}
+
 input.rounded {
     position: fixed;
     right: 2vw;
