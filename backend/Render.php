@@ -55,4 +55,8 @@ class Render{
     echo $template->render($f3->get('templates') . 'CreateNew.html');
   }
 
+  function temporaryLoginForm($f3){
+    $template=new Template;
+    echo $template->render($f3->get('templates') . 'LoginForm.html');
+  }
 }
