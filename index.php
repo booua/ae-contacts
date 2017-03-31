@@ -4,15 +4,17 @@ $f3=require('lib/base.php');
 require_once('backend/config.php');
 
 $f3->set('DEBUG',3);
-$f3->config('config.ini');
 
 $f3->set('AUTOLOAD',
 				'./backend/;
 				./ui/');
 
+$f3->config('config.ini');
+
 $f3->route('GET /','Render->renderAllCategoriesView');
 $f3->route('GET /login','Render->renderLoginForm');
 $f3->route('POST /login/auth','DataHandler->auth');
+$f3->route('POST|GET /logout','DataHandler->logout');
 $f3->route('GET /all_contacts','Render->renderAllContactsView');
 $f3->route('GET /category/@category_id','Render->renderSingleCategoryView');
 $f3->route('GET /category/@category_id/contact/@contact_id','Render->renderSingleContactView');

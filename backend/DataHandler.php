@@ -5,7 +5,12 @@ class DataHandler{
   function auth($f3){
     var_dump ($f3->get('POST'));
   }
+  function logout($f3){
+    $ae_auth = new AeAuth($f3->get("auth_config"));
+    $ae_auth->destroy_session();
+    echo('lOogout');
 
+  }
   function createNewContact($f3){
 
     $helper = new Helpers();

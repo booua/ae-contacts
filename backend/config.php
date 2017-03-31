@@ -10,9 +10,9 @@ $f3->set("auth_config", $config);
 
 
 $db = new DB\SQL(
-		    'mysql:host=localhost;port=8889;dbname=companies_data',
-		    'root',
-		    'root'
+		    'mysql:host=localhost;port=8889;dbname=ae_contacts',
+		    'ae_contacts',
+		    'eAAj4XzEzI'
 		);
 
 $f3->set('DB', $db);
