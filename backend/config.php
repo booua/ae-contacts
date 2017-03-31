@@ -6,6 +6,7 @@ $config = [
     'secret_key' => 'sO6L1x1=E*b,wp>i3?@D',
     'redis' => 'redis://localhost:6379?database=1&password='.urlencode('xy]@6m2NE1S/_NE;H#x]')
 ];
+$f3->set("auth_config", $config);
 
 
 $db = new DB\SQL(

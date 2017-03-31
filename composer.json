@@ -1,9 +1,12 @@
 {
-	"name": "ae/adsApi",
+	"name": "ae/contacts",
 	"require": {
 		"php": ">=5.3.6"
 	},
 	"autoload": {
 		"files": ["lib/base.php"]
-	}
+	},
+    "require": {
+        "predis/predis": "1.1.1"
+    }
 }

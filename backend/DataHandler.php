@@ -2,6 +2,10 @@
 
 class DataHandler{
 
+  function auth($f3){
+    var_dump ($f3->get('POST'));
+  }
+
   function createNewContact($f3){
 
     $helper = new Helpers();

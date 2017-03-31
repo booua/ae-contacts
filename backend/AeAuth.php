@@ -1,10 +1,11 @@
 <?php
 
-require __DIR__ . '/predis/Autoloader.php';
+require __DIR__ . '/vendor/predis/predis/autoload.php';
 Predis\Autoloader::register();
 
 class AeAuth {
   function __construct($config) {
+
       $this->config = $config;
       $this->redis = new Predis\Client($config['redis']);
       $this->token = $config['token'];
@@ -33,7 +34,7 @@ class AeAuth {
 
   function authorize_with_key($key) {
     //odkodowany klucz
-    $data = check_auth($key)
+    $data = check_auth($key);
     if($data) {
       $_SESSION['ae_key'] = $key;
       return $data;

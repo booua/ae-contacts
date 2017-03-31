@@ -55,7 +55,9 @@ class Render{
     echo $template->render($f3->get('templates') . 'CreateNew.html');
   }
 
-  function temporaryLoginForm($f3){
+  function renderLoginForm($f3){
+    $ae_auth = new AeAuth($f3->get("auth_config"));
+    $f3->set('auth_token', $ae_auth->token);
     $template=new Template;
     echo $template->render($f3->get('templates') . 'LoginForm.html');
   }

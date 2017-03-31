@@ -1,2 +1,4 @@
 tmp
 backend/config.php
+composer.phar
+vendor/
