@@ -34,7 +34,7 @@ class AeAuth {
 
   function authorize_with_key($key) {
     //odkodowany klucz
-    $data = check_auth($key);
+    $data = $this->check_auth($key);
     if($data) {
       $_SESSION['ae_key'] = $key;
       return $data;

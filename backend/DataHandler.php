@@ -3,12 +3,18 @@
 class DataHandler{
 
   function auth($f3){
-    var_dump ($f3->get('POST'));
+    $ae_auth = new AeAuth($f3->get("auth_config"));
+    $crypto = new Crypto();
+    $key = $f3->get("GET.key");
+    $decryptedKey = $crypto->decrypt($f3->get("auth_config")['secret_key'], $key);
+    $ae_auth->authorize_with_key($decryptedKey);
+    var_dump ("Auth");
+
   }
   function logout($f3){
     $ae_auth = new AeAuth($f3->get("auth_config"));
     $ae_auth->destroy_session();
-    echo('lOogout');
+    echo('logout');
 
   }
   function createNewContact($f3){

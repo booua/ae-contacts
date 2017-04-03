@@ -12,8 +12,7 @@ $f3->set('AUTOLOAD',
 $f3->config('config.ini');
 
 $f3->route('GET /','Render->renderAllCategoriesView');
-$f3->route('GET /login','Render->renderLoginForm');
-$f3->route('POST /login/auth','DataHandler->auth');
+$f3->route('POST|GET /authorize','DataHandler->auth');
 $f3->route('POST|GET /logout','DataHandler->logout');
 $f3->route('GET /all_contacts','Render->renderAllContactsView');
 $f3->route('GET /category/@category_id','Render->renderSingleCategoryView');
