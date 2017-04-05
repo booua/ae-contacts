@@ -14,7 +14,6 @@ class AeAuth {
 
   function check_auth($key) {
       $data = $this->redis->get(trim($key));
-
       if ($data) {
           $data = json_decode($data, true);
 
@@ -29,11 +28,10 @@ class AeAuth {
   function authorize() {
     if (is_null($_SESSION['ae_key']))
         return false;
-    return check_auth($_SESSION['ae_key']);
+    return $this->check_auth($_SESSION['ae_key']);
   }
 
   function authorize_with_key($key) {
-    //odkodowany klucz
     $data = $this->check_auth($key);
     if($data) {
       $_SESSION['ae_key'] = $key;

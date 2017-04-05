@@ -2,8 +2,6 @@
 
 class Render{
   function renderAllCategoriesView($f3){
-
-
     $f3->set('all_categories',$f3->get('DB')->exec("SELECT * FROM category"));
     $f3->set('page_title','All categories');
     $template=new Template;
