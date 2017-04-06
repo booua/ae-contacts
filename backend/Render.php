@@ -52,4 +52,10 @@ class Render{
     $template=new Template;
     echo $template->render($f3->get('templates') . 'CreateNew.html');
   }
+
+  function notAuthorized($f3){
+    $f3->set('page_title','Not Authorized');
+    $template=new Template;
+    echo $template->render($f3->get('templates') . 'Unauthorized.html');
+  }
 }
