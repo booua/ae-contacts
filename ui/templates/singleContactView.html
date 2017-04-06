@@ -3,40 +3,34 @@
 <check if="{{ @GET.message_type==updated }}">
     <include href="{{ @templates . 'ModalAlert.html' }}" />
 </check>
-
-<form class="company_data_form" action="{{@PARAMS.contact_id}}/update" method="post">
-  <div class="row">
-    <label for="company_name">Company name</label>
-    <input type="text" name="company_name" value="{{@single_contact['name']}}">
-  </div>
-
-  <div class="row">
-    <label for="company_website">Company website</label>
-    <input type="text" name="company_website" value="{{@single_contact['website']}}">
-  </div>
-
-  <div class="row">
-    <label for="company_facebook">Company facebook</label>
-    <input type="text" name="company_facebook" value="{{@single_contact['facebook']}}">
-  </div>
-
-  <div class="row">
-    <label for="company_email">Company email</label>
-    <input type="text" name="company_email" value="{{@single_contact['email']}}">
-  </div>
-
-  <div class="row">
-    <label for="company_phone">Company phone</label>
-    <input type="text" name="company_phone" value="{{@single_contact['phone']}}">
-  </div>
-
-  <div class="row">
-    <label for="company_additional">Company additional</label>
-    <textarea name="company_additional">{{@single_contact['additional']}}</textarea>
-  </div>
-  <div class="row">
-    <button type="submit" class='btn btn-success' name="button">UPDATE CONTACT</button>
-    <a href="{{@PARAMS.contact_id}}/delete" class='btn btn-danger' id="delete_button" name="button">DELETE CONTACT</a>
-  </div>
-</form>
+<div class="form-container">
+    <form class="company_data_form" action="{{@PARAMS.contact_id}}/update" method="post">
+        <div class="row">
+            <div class="col-md-6" style="padding:0; ">
+                <label for="company_name">Company name</label><br>
+                <input type="text" name="company_name" value="{{@single_contact['name']}}"><br>
+                <label for="company_website">Company website</label><br>
+                <input type="text" name="company_website" value="{{@single_contact['website']}}"><br>
+                <label for="company_facebook">Company facebook</label><br>
+                <input type="text" name="company_facebook" value="{{@single_contact['facebook']}}"><br>
+                <label for="company_email">Company email</label><br>
+                <input type="text" name="company_email" value="{{@single_contact['email']}}"><br>
+                <label for="company_phone">Company phone</label><br>
+                <input type="text" name="company_phone" value="{{@single_contact['phone']}}"><br>
+            </div>
+            <div class="col-md-6" style="padding:0;">
+                <label for="company_additional">Company additional</label><br>
+                <textarea name="company_additional" cols="27" rows="10" value="">{{@single_contact['additional']}}</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="padding:0;"><br>
+              <button type="submit" class='btn btn-success' name="button">UPDATE CONTACT</button>
+            </div>
+            <div class="col-md-6" style="padding:0;">
+              <a href="{{@PARAMS.contact_id}}/delete" class='btn btn-danger' id="delete_button" name="button">DELETE CONTACT</a>
+            </div>
+        </div>
+    </form>
+</div>
 <include href="{{ @templates . 'footer.html' }}" />
