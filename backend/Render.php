@@ -1,6 +1,6 @@
 <?php
-
 class Render{
+
   function renderAllCategoriesView($f3){
     $f3->set('all_categories',$f3->get('DB')->exec("SELECT * FROM category"));
     $f3->set('page_title','All categories');
@@ -23,11 +23,13 @@ class Render{
   function renderSingleContactView($f3){
     $contact_id = $f3->get("PARAMS.contact_id");
     $category_id = $f3->get("PARAMS.category_id");
+
     $f3->set('single_contact',$f3->get('DB')->exec("SELECT * FROM contacts
                                                     WHERE contacts.category_id = ?
                                                     AND contacts.id = ?",array(
                                                       1=>$category_id,
                                                       2=>$contact_id))[0]);
+    $f3->set('page_title',$f3->get('single_contact')['name']);
     $template=new Template;
     echo $template->render($f3->get('templates') . 'singleContactView.html');
   }

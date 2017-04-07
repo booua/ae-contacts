@@ -1,10 +1,10 @@
 <div class="top-alert {{@GET.message_type}}">
   <check if="{{ @GET.message_type=='duplicate'}}">
       <true>
-        This entry already exists in database!
+        <h3 class="text-center">This entry already exists in database!</h3>
       </true>
       <false>
-        Contact was {{@GET.message_type}}!
+        <h3 class="text-center">Contact was {{@GET.message_type}}!</h3>
       </false>
   </check>
 </div>

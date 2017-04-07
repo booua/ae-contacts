@@ -8,26 +8,26 @@
         <div class="row">
             <div class="col-md-6" style="padding:0; ">
                 <label for="company_name">Company name</label><br>
-                <input type="text" name="company_name" value="{{@single_contact['name']}}"><br>
+                <input type="text" class="form-control" placeholder="Company name" name="company_name" value="{{@single_contact['name']}}"><br>
                 <label for="company_website">Company website</label><br>
-                <input type="text" name="company_website" value="{{@single_contact['website']}}"><br>
+                <input type="text" class="form-control" placeholder="Company website" name="company_website" value="{{@single_contact['website']}}"><br>
                 <label for="company_facebook">Company facebook</label><br>
-                <input type="text" name="company_facebook" value="{{@single_contact['facebook']}}"><br>
+                <input type="text" class="form-control" placeholder="Company facebook" name="company_facebook" value="{{@single_contact['facebook']}}"><br>
                 <label for="company_email">Company email</label><br>
-                <input type="text" name="company_email" value="{{@single_contact['email']}}"><br>
+                <input type="text" class="form-control" placeholder="Company email" name="company_email" value="{{@single_contact['email']}}"><br>
                 <label for="company_phone">Company phone</label><br>
-                <input type="text" name="company_phone" value="{{@single_contact['phone']}}"><br>
+                <input type="text" class="form-control" placeholder="Company phone" name="company_phone" value="{{@single_contact['phone']}}"><br>
             </div>
-            <div class="col-md-6" style="padding:0;">
+            <div class="col-md-5 col-md-offset-1" style="padding:0;">
                 <label for="company_additional">Company additional</label><br>
-                <textarea name="company_additional" cols="27" rows="10" value="">{{@single_contact['additional']}}</textarea>
+                <textarea class="form-control" placeholder="Company additional info" name="company_additional" cols="27" rows="17" value="">{{@single_contact['additional']}}</textarea>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6" style="padding:0;"><br>
+            <div class="col-md-6"><br>
               <button type="submit" class='btn btn-success' name="button">UPDATE CONTACT</button>
             </div>
-            <div class="col-md-6" style="padding:0;">
+            <div class="col-md-6">
               <a href="{{@PARAMS.contact_id}}/delete" class='btn btn-danger' id="delete_button" name="button">DELETE CONTACT</a>
             </div>
         </div>

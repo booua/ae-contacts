@@ -8,19 +8,19 @@
                 <div class="row">
                     <div class="col-md-6" style="padding:0; ">
                         <label for="company_name">Company name</label><br>
-                        <input type="text" name="company_name" value=""><br>
+                        <input type="text" class="form-control" placeholder="Company name" name="company_name" value=""><br>
                         <label for="company_website">Company website</label><br>
-                        <input type="text" name="company_website" value=""><br>
+                        <input type="text" class="form-control" placeholder="Company website" name="company_website" value=""><br>
                         <label for="company_facebook">Company facebook</label><br>
-                        <input type="text" name="company_facebook" value=""><br>
+                        <input type="text" class="form-control" placeholder="Company facebook" name="company_facebook" value=""><br>
                         <label for="company_email">Company email</label><br>
-                        <input type="text" name="company_email" value=""><br>
+                        <input type="text" class="form-control" placeholder="Company name" name="company_email" value=""><br>
                         <label for="company_phone">Company phone</label><br>
-                        <input type="text" name="company_phone" value=""><br>
+                        <input type="text" class="form-control" placeholder="Company phone number" name="company_phone" value=""><br>
                     </div>
-                    <div class="col-md-6" style="padding:0;">
+                    <div class="col-md-5 col-md-offset-1" style="padding:0;">
                         <label for="company_additional">Company additional</label><br>
-                        <textarea name="company_additional" cols="27" rows="10" value=""></textarea>
+                        <textarea class="form-control" placeholder="Company additional info" name="company_additional" cols="27" rows="17" value=""></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -36,19 +36,18 @@
             <form class="category_form" action="./new_category/create" method="post">
                 <div class="row">
                     <label for="category_name">Category name</label>
-                    <input type="text" name="company_name" value="">
+                    <input class="form-control" type="text" name="company_name" value="">
                 </div>
                 <div class="row">
                     <label for="company_icon">Category icon</label>
-                    <input type="text" name="company_icon" value="" placeholder="e.g: fa-camera">
-                </div>
+                    <input id="icon-input" class="form-control" type="text" name="company_icon" value="" placeholder="e.g: fa-camera">
+                </div><br>
                 <div class="row">
                     <button type="submit" class='btn btn-success' name="button">Submit</button>
                 </div>
             </form>
         </div>
-        <div class="icon-chooser">
-          placeholder list icons
+        <div id="icon-chooser">
         </div>
     </false>
 </check>

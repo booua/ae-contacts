@@ -14,8 +14,8 @@ session_start();
 
 $ae_auth = new AeAuth($f3->get("auth_config"));
 $f3->route('POST|GET /authorize','DataHandler->auth');
-
 if($ae_auth->authorize()){
+
 	$f3->route('GET /','Render->renderAllCategoriesView');
 	$f3->route('POST|GET /logout','DataHandler->logout');
 	$f3->route('GET /all_contacts','Render->renderAllContactsView');
