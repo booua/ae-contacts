@@ -12,9 +12,13 @@ class Render{
 
 
       $category_id = $f3->get("PARAMS.category_id");
-      $f3->set('all_contacts',$f3->get('DB')->exec("SELECT category.name, contacts.* FROM category
+      $page_nr = $f3->get("PARAMS.page_nr")-1;
+      $f3->set('all_contacts',$f3->get('DB')->exec("SELECT SQL_CALC_FOUND_ROWS category.name, contacts.* FROM category
                                                     JOIN contacts ON contacts.category_id = category.id
-                                                    WHERE category.id = ?",array(1=>$category_id)));
+                                                    WHERE category.id = ? LIMIT 10 OFFSET ?",array(1=>$category_id,2=>$page_nr*10)));
+
+      $f3->set('contact_count',$f3->get('DB')->exec("SELECT FOUND_ROWS()"));
+
       $f3->set('page_title','Companies');
       $template=new Template;
       echo $template->render($f3->get('templates') . 'singleCategoryView.html');
