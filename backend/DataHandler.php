@@ -32,7 +32,7 @@ class DataHandler{
           $company->phone=$f3->get("POST.company_phone");
           $company->additional=$f3->get("POST.company_additional");
           $company->save();
-          $f3->reroute('../?message_type=created');
+          $f3->reroute('../page/1/?message_type=created');
         }else{
           $f3->reroute('./?message_type=duplicate');
         }
@@ -42,7 +42,7 @@ class DataHandler{
           $contact=new DB\SQL\Mapper($f3->get('DB'),'contacts');
           $contact->load(array('id=?',$f3->get("PARAMS.contact_id")));
           $contact->erase();
-          $f3->reroute('../../?message_type=deleted');
+          $f3->reroute('../../page/1/?message_type=deleted');
   }
 
   function updateContact($f3){
@@ -68,7 +68,7 @@ class DataHandler{
       $category->name=$f3->get("POST.company_name");
       $category->icon=$f3->get("POST.company_icon");
       $category->save();
-      $f3->reroute('../?message_type=created');
+      $f3->reroute('../../?message_type=created');
     }else{
       $f3->reroute('./?message_type=duplicate');
     }
@@ -79,7 +79,7 @@ class DataHandler{
   function searchEntry($f3){
     $search_query = $f3->get("POST.search_query");
       if($f3->get("PARAMS.category_id")){
-          echo(json_encode($f3->get('DB')->exec("SELECT * FROM contacts WHERE name LIKE ?",array(1=>$search_query))));
+          echo(json_encode($f3->get('DB')->exec("SELECT * FROM contacts WHERE name LIKE ? AND category_id=?",array(1=>$search_query,2=>$f3->get("PARAMS.category_id")))));
       }else{
           echo(json_encode($f3->get('DB')->exec("SELECT * FROM category WHERE name LIKE ?",array(1=>$search_query))));
       }

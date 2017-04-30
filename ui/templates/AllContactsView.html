@@ -1,17 +1,10 @@
 <include href="{{ @templates . 'header.html' }}" />
 <div class="categories_grid">
     <div id="main_row" class="row"  style="margin-top:2%;">
-        <a href="./{{@PARAMS.category_id}}/new_contact">
-            <div class="col-md-3 list_item create_new">
-                <h4>New contact</h4>
-            </div>
-        </a>
         <repeat group="{{ @all_contacts }}" value="@contact">
-            <a href="./{{@contact.category_id}}/contact/{{@contact.id}}">
                 <div class="list_item {{@contact.name}}_tile col-md-3">
                     <h5>{{@contact.name}}</h5>
                 </div>
-            </a>
         </repeat>
     </div>
 </div>

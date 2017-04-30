@@ -49,10 +49,15 @@ document.getElementById("search").addEventListener("keyup", function(event) {
             search_query: "%" + document.getElementById("search").value + "%"
         }, function(data) {
             var jsonData = JSON.parse(data);
-            document.getElementById("main_row").innerHTML = '<a href="./category/new_category"><div class="tile col-md-3 create_new"><h3>create New</h3></div></a>'
+            var render_type = 'tile';
+            var heading_type = 3
+            if(jsonData[0].category_id != null){
+              render_type = 'list_item';
+              heading_type = 4
+            }
+            document.getElementById("main_row").innerHTML = '<a href="./category/new_category"><div class="'+render_type+' col-md-3 create_new"><h'+(heading_type)+'>create New</h'+(heading_type)+'></div></a>'
             for (var i = 0; i < jsonData.length; i++) {
-                console.log(jsonData[i]);
-                document.getElementById("main_row").innerHTML += '<a href="./category/' + parseInt(jsonData[i].id) + '"><div class="tile col-md-3"><h3>' + jsonData[i].name + '</h3></div></a>'
+                document.getElementById("main_row").innerHTML += '<a href="./category/' + parseInt(jsonData[i].id) + '/page/1"><div class="'+render_type+' col-md-3"><h'+(heading_type+1)+'>' + jsonData[i].name + '</h'+(heading_type+1)+'></div></a>'
             }
         });
     }

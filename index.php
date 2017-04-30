@@ -27,7 +27,7 @@ if($ae_auth->authorize()){
 	$f3->route('GET|POST /category/new_category/create','DataHandler->createNewCategory');
 	$f3->route('GET /category/@category_id/new_contact','Render->renderNewContactView');
 	$f3->route('GET|POST /category/@category_id/new_contact/create','DataHandler->createNewContact');
-	$f3->route('GET|POST /category/@category_id/search','DataHandler->searchEntry');
+	$f3->route('GET|POST /category/@category_id/page/search','DataHandler->searchEntry');
 	$f3->route('GET|POST /search','DataHandler->searchEntry');
 	$f3->route('GET /export_database','Helpers->exportDatabaseToCSV');
 

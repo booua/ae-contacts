@@ -15,7 +15,7 @@ class Render{
       $page_nr = $f3->get("PARAMS.page_nr")-1;
       $f3->set('all_contacts',$f3->get('DB')->exec("SELECT SQL_CALC_FOUND_ROWS category.name, contacts.* FROM category
                                                     JOIN contacts ON contacts.category_id = category.id
-                                                    WHERE category.id = ? LIMIT 10 OFFSET ?",array(1=>$category_id,2=>$page_nr*10)));
+                                                    WHERE category.id = ? LIMIT 25 OFFSET ?",array(1=>$category_id,2=>$page_nr*25)));
 
       $f3->set('contact_count',$f3->get('DB')->exec("SELECT FOUND_ROWS()"));
 
