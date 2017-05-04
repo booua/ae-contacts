@@ -18,7 +18,7 @@ if($ae_auth->authorize()){
 
 	$f3->route('GET /','Render->renderAllCategoriesView');
 	$f3->route('POST|GET /logout','DataHandler->logout');
-	$f3->route('GET /all_contacts','Render->renderAllContactsView');
+	$f3->route('GET /all_contacts/page/@page_nr','Render->renderAllContactsView');
 	$f3->route('GET /category/@category_id/page/@page_nr','Render->renderSingleCategoryView');
 	$f3->route('GET /category/@category_id/contact/@contact_id','Render->renderSingleContactView');
 	$f3->route('GET /category/@category_id/contact/@contact_id/delete','DataHandler->deleteContact');

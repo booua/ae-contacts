@@ -7,5 +7,12 @@
                 </div>
         </repeat>
     </div>
+    <div class="row pages_row">
+        <loop from="{{ @i=0 }}" to="{{ @i < ceil(@contact_count[0]['FOUND_ROWS()']/10) }}" step="{{ @i++ }}">
+                <a href="./{{@i+1}}">
+                    <div class="page_indicator">{{@i+1}}</div>
+                </a>
+        </loop>
+    </div>
 </div>
 <include href="{{ @templates . 'footer.html' }}" />
