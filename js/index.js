@@ -57,7 +57,8 @@ document.getElementById("search").addEventListener("keyup", function(event) {
             }
             document.getElementById("main_row").innerHTML = '<a href="./category/new_category"><div class="'+render_type+' col-md-3 create_new"><h'+(heading_type)+'>create New</h'+(heading_type)+'></div></a>'
             for (var i = 0; i < jsonData.length; i++) {
-                document.getElementById("main_row").innerHTML += '<a href="./category/' + parseInt(jsonData[i].id) + '/page/1"><div class="'+render_type+' col-md-3"><h'+(heading_type+1)+'>' + jsonData[i].name + '</h'+(heading_type+1)+'></div></a>'
+                document.getElementById("main_row").innerHTML += '<div class="'+render_type+' col-md-3" onclick="expandList(this)"><div class="col-md-10"><h'+(heading_type+1)+'>' + jsonData[i].name + '</h'+(heading_type+1)+'><span class="details"><div class="col-md-3"><strong>facebook:</strong> ' + jsonData[i].facebook + '<br><strong>webpage:</strong> ' + jsonData[i].webpage + '</div><div class="col-md-3"><strong>email:</strong> ' + jsonData[i].email +
+                '<br><strong>phone:</strong> '+jsonData[i].phone+'}</div><div class="col-md-3"><strong>additional:</strong> ' + jsonData[i].additional + '<br></div></span></div><div class="col-md-2"><a href="../../' + parseInt(jsonData[i].category_id) + '/contact/' + parseInt(jsonData[i].id) + '" class="edit_btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></div></div>'
             }
         });
     }

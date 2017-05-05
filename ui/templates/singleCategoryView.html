@@ -14,10 +14,19 @@
             <div class="list_item col-md-3" onclick="expandList(this)">
                 <div class="col-md-10">
                     <h5>{{@contact.name}}</h5>
-                    <p class="details">
-                      f: {{@contact.facebook}}<br>
-                      p: {{@contact.webpage}}
-                    </p>
+                    <span class="details">
+                      <div class="col-md-3">
+                        <strong>facebook:</strong> {{@contact.facebook}}<br>
+                        <strong>webpage:</strong> {{@contact.webpage}}
+                      </div>
+                      <div class="col-md-3">
+                        <strong>email:</strong> {{@contact.email}}<br>
+                        <strong>phone:</strong> {{@contact.phone}}
+                      </div>
+                      <div class="col-md-3">
+                        <strong>additional:</strong> {{@contact.additional}}<br>
+                      </div>
+                    </span>
                 </div>
                 <div class="col-md-2">
                     <a href="../../{{@contact.category_id}}/contact/{{@contact.id}}" class='edit_btn'>
@@ -25,11 +34,10 @@
                     </a>
                 </div>
             </div>
-
         </repeat>
     </div>
     <div class="row pages_row">
-        <loop from="{{ @i=0 }}" to="{{ @i < ceil(@contact_count[0]['FOUND_ROWS()']/10) }}" step="{{ @i++ }}">
+        <loop from="{{ @i=0 }}" to="{{ @i < ceil(@contact_count[0]['FOUND_ROWS()']/25) }}" step="{{ @i++ }}">
             <a href="./{{@i+1}}">
                 <div class="page_indicator">{{@i+1}}</div>
             </a>

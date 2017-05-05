@@ -190,13 +190,7 @@ h2 {
         margin: 0;
         padding: 0;
     }
-    .details{
-      visibility: hidden;
-      transition: all ease-in-out 0.2s;
-    }
-    .show_details{
-      visibility: visible;
-    }
+
     .edit_btn{
       color: #000;
       width: 50px;
@@ -207,6 +201,13 @@ h2 {
     .edit_btn:hover{
       color: #afafaf;
     }
+}
+.details{
+  opacity: 0;
+  transition: all ease-in-out 0.2s;
+}
+.show_details{
+  opacity: 1;
 }
 .expand_list{
   height: 12vh;
