@@ -11,18 +11,28 @@
             </div>
         </a>
         <repeat group="{{ @all_contacts }}" value="@contact">
-            <a href="../../{{@contact.category_id}}/contact/{{@contact.id}}">
-                <div class="list_item {{@contact.name}}_tile col-md-3">
+            <div class="list_item col-md-3" onclick="expandList(this)">
+                <div class="col-md-10">
                     <h5>{{@contact.name}}</h5>
+                    <p class="details">
+                      f: {{@contact.facebook}}<br>
+                      p: {{@contact.webpage}}
+                    </p>
                 </div>
-            </a>
+                <div class="col-md-2">
+                    <a href="../../{{@contact.category_id}}/contact/{{@contact.id}}" class='edit_btn'>
+                      <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
         </repeat>
     </div>
     <div class="row pages_row">
         <loop from="{{ @i=0 }}" to="{{ @i < ceil(@contact_count[0]['FOUND_ROWS()']/10) }}" step="{{ @i++ }}">
-                <a href="./{{@i+1}}">
-                    <div class="page_indicator">{{@i+1}}</div>
-                </a>
+            <a href="./{{@i+1}}">
+                <div class="page_indicator">{{@i+1}}</div>
+            </a>
         </loop>
     </div>
 </div>

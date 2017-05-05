@@ -66,6 +66,14 @@ document.getElementById("search").addEventListener("keyup", function(event) {
 document.body.onload = function() {
     appendField();
 }
+
+function expandList(el){
+  el.classList.toggle('expand_list')
+  el.getElementsByClassName('details')[0].classList.toggle("show_details")
+
+
+}
+
 function selectIcon(element) {
     console.log(element.getAttribute("data"))
     document.getElementById("icon-input").value = element.getAttribute("data");
